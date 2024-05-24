@@ -1,11 +1,11 @@
 #!/bin/bash
 
 MODEL=bert-base-multilingual-cased
-DATA=en-abstrct-untokenized/BIO/
+DATA=dataset/EN
 
 for tst in neoplasm glaucoma mixed
 do
-OUTPUT_DIR=fewshot/EN_${tst}_full_mono_mbert_2/
+OUTPUT_DIR=EN_${tst}_full_mbert
 for j in 1 2 3 4
 do
 echo "-------------------${j} round -> test on ${tst}"

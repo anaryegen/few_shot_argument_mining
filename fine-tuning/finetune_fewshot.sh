@@ -1,7 +1,7 @@
 #!/bin/bash
 
 MODEL=bert-base-multilingual-cased
-DATA=dataset/EN/argument_components/untokenized/
+DATA=dataset/EN/
 
 for tst in neoplasm glaucoma mixed
 do
@@ -9,7 +9,7 @@ for mode in %
 do
 for K in 5 10 20 50
 do
-OUTPUT_DIR=/ikerlariak/ayeginbergenov001/experiments/fewshot/EN_${tst}_few_mbert_2/${K}${mode}
+OUTPUT_DIR=/EN_${tst}_mbert/${K}${mode}
 for j in 1 2 3
 do
 
@@ -19,8 +19,8 @@ echo "-------------------$K-$mode : ${j}.json file - ${i} round -> test on ${tst
 python run_ner.py \
 	--model_name_or_path $MODEL --seed $j \
 	--per_device_train_batch_size 4 \
-	--train_file $DATA/fewshot/${K}${mode}/${j}.json \
-	--test_file  en-abstrct-untokenized/BIO/${tst}_test.json \
+	--train_file $DATA/${K}${mode}/${j}.json \
+	--test_file  $DATA/${tst}_test.json \
 	--max_seq_length 256 \
 	--output_dir $OUTPUT_DIR \
 	--num_train_epochs 3 \
