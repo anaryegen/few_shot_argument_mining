@@ -21,4 +21,12 @@ All the data used for the experiments can be found in `dataset` folder.
 
 * Alternatively, you can run `sh fine-tuning/finetune_full.sh` in order to fine-tune the model using full data. 
 
-
+## Citation
+````bibtex
+@article{yeginbergen2024argument,
+  title={Argument Mining in Data Scarce Settings: Cross-lingual Transfer and Few-shot Techniques},
+  author={Yeginbergen, Anar and Oronoz, Maite and Agerri, Rodrigo},
+  journal={arXiv preprint arXiv:2407.03748},
+  year={2024}
+}
+````
